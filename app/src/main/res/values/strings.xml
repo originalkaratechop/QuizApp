@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="txtHeader">QuizApp</string>
+    <string name="txtTitle">QuizApp</string>
+    <string name="opt1">Correct</string>
+    <string name="opt2">inCorrect2</string>
+    <string name="opt3">inCorrect3</string>
+    <string name="opt4">inCorrect4</string>
+    <string name="slide1body">Slide 1 body</string>
+    <string name="plainTxt">Your name here</string>
+    <string name="btnNext">Next</string>
+    <string name="ending1">, thank you for participation!</string>
+    <string name="ending2">Sha-la-la</string>
+</resources>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.quizapp.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/slide1Content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:elevation="2dp"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/slide1Header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_gradient"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textHeader1"
+                style="@style/txtHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="24dp"
+                android:text="@string/txtHeader" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/slide1Body"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textTitle1"
+                style="@style/txtOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:text="@string/txtTitle" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textBody1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginStart="32dp"
+                android:text="@string/slide1body" />
+
+            <EditText
+                android:id="@+id/inputTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/plainTxt" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn1"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="32dp"
+                android:onClick="start"
+                android:text="@string/btnNext" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/slide2Content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:elevation="2dp"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/slide2Header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_gradient"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textHeader2"
+                style="@style/txtHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="24dp"
+                android:text="@string/txtHeader" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/slide2Body"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textTitle2"
+                style="@style/txtOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:text="@string/txtTitle" />
+
+            <View
+                android:id="@+id/fillerTop"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textBody2"
+                style="@style/txtOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/txtTitle" />
+
+            <LinearLayout
+                android:id="@+id/rGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rBtn1"
+                    style="@style/txtRadioButton"
+                    android:text="@string/opt1" />
+
+                <RadioButton
+                    android:id="@+id/rBtn2"
+                    style="@style/txtRadioButton"
+                    android:text="@string/opt2" />
+
+                <RadioButton
+                    android:id="@+id/rBtn3"
+                    style="@style/txtRadioButton"
+                    android:text="@string/opt3" />
+
+                <RadioButton
+                    android:id="@+id/rBtn4"
+                    style="@style/txtRadioButton"
+                    android:text="@string/opt4" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/fillerBot"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3" />
+
+            <Button
+                android:id="@+id/btnNext"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="32dp"
+                android:minHeight="0dp"
+                android:onClick="nextSlide"
+                android:padding="4dp"
+                android:text="@string/btnNext" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginStart="32dp"
+                android:backgroundTint="@drawable/bg_gradient"
+                android:max="10"
+                android:progress="5"
+                android:progressBackgroundTint="@color/colorGray" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
