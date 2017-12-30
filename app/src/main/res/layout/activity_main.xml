@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.quizapp.MainActivity">
 
+
     <LinearLayout
-        android:id="@+id/slide1Content"
+        android:id="@+id/slide1Context"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
@@ -16,7 +18,7 @@
         android:elevation="2dp"
         android:focusable="true"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <RelativeLayout
             android:id="@+id/slide1Header"
@@ -50,31 +52,28 @@
                 style="@style/txtOther"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
                 android:gravity="center_horizontal"
                 android:text="@string/txtTitle" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
             <TextView
                 android:id="@+id/textBody1"
+                style="@style/txtOther"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="48dp"
                 android:text="@string/slide1body" />
 
             <EditText
-                android:id="@+id/inputTxt"
+                android:id="@+id/inputName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/plainTxt" />
+                android:hint="@string/plainTxt"
+                android:inputType="textPersonName" />
 
             <View
                 android:layout_width="match_parent"
@@ -86,18 +85,19 @@
                 style="@style/btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginBottom="24dp"
-                android:layout_marginEnd="32dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="64dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginStart="0dp"
                 android:onClick="start"
-                android:text="@string/btnNext" />
+                android:text="@string/btnNext1" />
 
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/slide2Content"
+        android:id="@+id/slide2Context"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
@@ -106,7 +106,7 @@
         android:elevation="2dp"
         android:focusable="true"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <RelativeLayout
             android:id="@+id/slide2Header"
@@ -125,6 +125,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="24dp"
                 android:text="@string/txtHeader" />
+
         </RelativeLayout>
 
         <LinearLayout
@@ -134,56 +135,83 @@
             android:layout_weight="3"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textTitle2"
-                style="@style/txtOther"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:gravity="center_horizontal"
-                android:text="@string/txtTitle" />
-
-            <View
-                android:id="@+id/fillerTop"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/textBody2"
-                style="@style/txtOther"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/txtTitle" />
 
             <LinearLayout
-                android:id="@+id/rGroup"
-                android:layout_width="match_parent"
+                android:id="@+id/bodyRadio"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                android:visibility="visible">
 
-                <RadioButton
-                    android:id="@+id/rBtn1"
-                    style="@style/txtRadioButton"
-                    android:text="@string/opt1" />
+                <TextView
+                    android:id="@+id/textRadio"
+                    style="@style/txtOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/txtTitle" />
 
-                <RadioButton
-                    android:id="@+id/rBtn2"
-                    style="@style/txtRadioButton"
-                    android:text="@string/opt2" />
+                <RadioGroup
+                    android:id="@+id/rGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
 
-                <RadioButton
-                    android:id="@+id/rBtn3"
-                    style="@style/txtRadioButton"
-                    android:text="@string/opt3" />
+                    <RadioButton
+                        android:id="@+id/rBtn1"
+                        style="@style/txtRadioButton"
+                        android:text="@string/opt1" />
 
-                <RadioButton
-                    android:id="@+id/rBtn4"
-                    style="@style/txtRadioButton"
-                    android:text="@string/opt4" />
+                    <RadioButton
+                        android:id="@+id/rBtn2"
+                        style="@style/txtRadioButton"
+                        android:text="@string/opt2" />
+
+                    <RadioButton
+                        android:id="@+id/rBtn3"
+                        style="@style/txtRadioButton"
+                        android:text="@string/opt3" />
+
+                    <RadioButton
+                        android:id="@+id/rBtn4"
+                        style="@style/txtRadioButton"
+                        android:text="@string/opt4" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bodyType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textType"
+                    style="@style/txtOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/txtTitle" />
+
+                <EditText
+                    android:id="@+id/answerType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:hint="@string/optTypeIdle"
+                    android:inputType="textPersonName" />
 
             </LinearLayout>
 
@@ -204,23 +232,168 @@
                 android:minHeight="0dp"
                 android:onClick="nextSlide"
                 android:padding="4dp"
-                android:text="@string/btnNext" />
+                android:text="@string/btnNext1" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_height="4dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginStart="32dp"
-                android:backgroundTint="@drawable/bg_gradient"
                 android:max="10"
-                android:progress="5"
-                android:progressBackgroundTint="@color/colorGray" />
+                android:progress="10"
+                android:progressDrawable="@drawable/bg_prog" />
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/resetOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:elevation="3dp"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <com.github.mmin18.widget.RealtimeBlurView
+            android:id="@+id/blur"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:realtimeBlurRadius="8dp"
+            app:realtimeOverlayColor="#003F51B5" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/line_overlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.45" />
+
+        <RelativeLayout
+            android:id="@+id/resetContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_overlay"
+            android:background="@drawable/bg_stroke"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_overlay">
+
+            <TextView
+                android:id="@+id/resetTxt"
+                style="@style/txtOther"
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="64dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center_horizontal"
+                android:text="@string/ending" />
+
+            <Button
+                android:id="@+id/resetBtn"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/resetTxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="24dp"
+                android:onClick="resetGame"
+                android:text="@string/btnNext2"
+                app:layout_constraintTop_toBottomOf="@+id/resetTxt" />
+
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/aniSet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:elevation="3dp"
+        android:focusable="false"
+        android:visibility="visible">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/line_aniHWinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/line_aniHChecker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/line_aniVStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/line_aniVEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <ImageView
+            android:id="@+id/aniBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toTopOf="@id/line_aniHWinner"
+            app:layout_constraintLeft_toLeftOf="@id/line_aniVStart"
+            app:layout_constraintRight_toRightOf="@id/line_aniVEnd"
+            app:layout_constraintWidth_default="wrap"/>
+
+        <ImageView
+            android:id="@+id/aniContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toTopOf="@id/line_aniHWinner"
+            app:layout_constraintLeft_toLeftOf="@id/line_aniVStart"
+            app:layout_constraintRight_toRightOf="@id/line_aniVEnd"
+            app:layout_constraintWidth_default="wrap" />
+
+        <TextView
+            android:id="@+id/aniTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            style="@style/txtOther"
+            app:layout_constraintLeft_toLeftOf="@id/line_aniVStart"
+            app:layout_constraintRight_toRightOf="@id/line_aniVEnd"
+            app:layout_constraintBottom_toTopOf="@+id/aniChecker" />
+
+        <ImageView
+            android:id="@+id/aniChecker"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitStart"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintTop_toBottomOf="@id/line_aniHChecker"
+            app:layout_constraintLeft_toLeftOf="@id/line_aniVStart"
+            app:layout_constraintRight_toRightOf="@id/line_aniVEnd"
+            app:layout_constraintWidth_default="wrap" />
+
+    </android.support.constraint.ConstraintLayout>
+
 
 </RelativeLayout>

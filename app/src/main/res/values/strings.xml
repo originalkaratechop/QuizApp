@@ -1,14 +1,148 @@
 <resources>
     <string name="app_name">QuizApp</string>
-    <string name="txtHeader">QuizApp</string>
-    <string name="txtTitle">QuizApp</string>
-    <string name="opt1">Correct</string>
-    <string name="opt2">inCorrect2</string>
-    <string name="opt3">inCorrect3</string>
-    <string name="opt4">inCorrect4</string>
-    <string name="slide1body">Slide 1 body</string>
-    <string name="plainTxt">Your name here</string>
-    <string name="btnNext">Next</string>
-    <string name="ending1">, thank you for participation!</string>
-    <string name="ending2">Sha-la-la</string>
+    <string name="txtHeader">Welcome to QuizApp</string>
+    <string name="txtTitle">That is just a small quiz-ish test.\nEnjoy!</string>
+    <string name="slide1body">Let\'s begin. What is your name?</string>
+    <string name="plainTxt">Type here</string>
+    <string name="btnNext1">Next</string>
+    <string name="btnNext2">Sure</string>
+    <string name="ending">Congratulations! \n %1$s, lets do it again!</string>
+    <string name="error1">Choose an answer.</string>
+    <string name="error2">Wrong! Try again.</string>
+    <string name="error3">Please type in an answer.</string>
+    <string name="success">Correct!</string>
+    <string name="q">Question %1$d</string>
+
+    <string name="opt0">ZeQuestion1</string>
+    <string name="opt1">1Correct</string>
+    <string name="opt2">1inCorrect2</string>
+    <string name="opt3">1inCorrect3</string>
+    <string name="opt4">1inCorrect4</string>
+
+    <string name="opt5">ZeQuestion2</string>
+    <string name="opt6">2Correct</string>
+    <string name="opt7">2inCorrect2</string>
+    <string name="opt8">2inCorrect3</string>
+    <string name="opt9">2inCorrect4</string>
+
+    <string name="opt10">ZeQuestion3</string>
+    <string name="opt11">3Correct</string>
+    <string name="opt12">3inCorrect2</string>
+    <string name="opt13">3inCorrect3</string>
+    <string name="opt14">3inCorrect4</string>
+
+    <string name="opt15">ZeQuestion4</string>
+    <string name="opt16">4Correct</string>
+    <string name="opt17">4inCorrect2</string>
+    <string name="opt18">4inCorrect3</string>
+    <string name="opt19">4inCorrect4</string>
+
+    <string name="opt20">ZeQuestion5</string>
+    <string name="opt21">5Correct</string>
+    <string name="opt22">5inCorrect2</string>
+    <string name="opt23">5inCorrect3</string>
+    <string name="opt24">5inCorrect4</string>
+
+    <string name="opt25">ZeQuestion6</string>
+    <string name="opt26">6Correct</string>
+    <string name="opt27">6inCorrect2</string>
+    <string name="opt28">6inCorrect3</string>
+    <string name="opt29">6inCorrect4</string>
+
+    <string name="opt30">ZeQuestion7</string>
+    <string name="opt31">7Correct</string>
+    <string name="opt32">7inCorrect2</string>
+    <string name="opt33">7inCorrect3</string>
+    <string name="opt34">7inCorrect4</string>
+
+    <string name="opt35">ZeQuestion8</string>
+    <string name="opt36">8Correct</string>
+    <string name="opt37">8inCorrect2</string>
+    <string name="opt38">8inCorrect3</string>
+    <string name="opt39">8inCorrect4</string>
+
+    <string name="opt40">ZeQuestion9</string>
+    <string name="opt41">9Correct</string>
+    <string name="opt42">9inCorrect2</string>
+    <string name="opt43">9inCorrect3</string>
+    <string name="opt44">9inCorrect4</string>
+
+    <string name="opt45">ZeQuestion10</string>
+    <string name="opt46">10Correct</string>
+    <string name="opt47">10inCorrect2</string>
+    <string name="opt48">10inCorrect3</string>
+    <string name="opt49">10inCorrect4</string>
+
+    <string name="opt50">ZeQuestion11</string>
+    <string name="opt51">11Correct</string>
+    <string name="opt52">11inCorrect2</string>
+    <string name="opt53">11inCorrect3</string>
+    <string name="opt54">11inCorrect4</string>
+
+    <string name="opt55">ZeQuestion12</string>
+    <string name="opt56">12Correct</string>
+    <string name="opt57">12inCorrect2</string>
+    <string name="opt58">12inCorrect3</string>
+    <string name="opt59">12inCorrect4</string>
+
+    <string name="opt60">ZeQuestion13</string>
+    <string name="opt61">13Correct</string>
+    <string name="opt62">13inCorrect2</string>
+    <string name="opt63">13inCorrect3</string>
+    <string name="opt64">13inCorrect4</string>
+
+    <string name="opt65">ZeQuestion14</string>
+    <string name="opt66">14Correct</string>
+    <string name="opt67">14inCorrect2</string>
+    <string name="opt68">14inCorrect3</string>
+    <string name="opt69">14inCorrect4</string>
+
+    <string name="opt70">ZeQuestion15</string>
+    <string name="opt71">15Correct</string>
+    <string name="opt72">15inCorrect2</string>
+    <string name="opt73">15inCorrect3</string>
+    <string name="opt74">15inCorrect4</string>
+
+    <string name="opt75">ZeQuestion16</string>
+    <string name="opt76">16Correct</string>
+    <string name="opt77">16inCorrect2</string>
+    <string name="opt78">16inCorrect3</string>
+    <string name="opt79">16inCorrect4</string>
+
+    <string name="opt80">ZeQuestion17</string>
+    <string name="opt81">17Correct</string>
+    <string name="opt82">17inCorrect2</string>
+    <string name="opt83">17inCorrect3</string>
+    <string name="opt84">17inCorrect4</string>
+
+    <string name="opt85">ZeQuestion18</string>
+    <string name="opt86">18Correct</string>
+    <string name="opt87">18inCorrect2</string>
+    <string name="opt88">18inCorrect3</string>
+    <string name="opt89">18inCorrect4</string>
+
+    <string name="opt90">ZeQuestion19</string>
+    <string name="opt91">19Correct</string>
+    <string name="opt92">19inCorrect2</string>
+    <string name="opt93">19inCorrect3</string>
+    <string name="opt94">19inCorrect4</string>
+
+    <string name="opt95">ZeQuestion20</string>
+    <string name="opt96">20Correct</string>
+    <string name="opt97">20inCorrect2</string>
+    <string name="opt98">20inCorrect3</string>
+    <string name="opt99">20inCorrect4</string>
+
+    <string name="optTypeIdle">Tap here to type </string>
+    <string name="optType0">ZeTypeQuestion1 (answer 3)</string>
+    <string name="optType1">3</string>
+    <string name="optType2">ZeTypeQuestion2 (answer 3)</string>
+    <string name="optType3">3</string>
+    <string name="optType4">ZeTypeQuestion3 (answer 3)</string>
+    <string name="optType5">3</string>
+    <string name="optType6">ZeTypeQuestion4 (answer 3)</string>
+    <string name="optType7">3</string>
+    <string name="optType8">ZeTypeQuestion5 (answer 3)</string>
+    <string name="optType9">3</string>
+
 </resources>
