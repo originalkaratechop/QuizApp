@@ -4,6 +4,7 @@
     <string name="txtTitle">That is just a small quiz-ish test.\nEnjoy!</string>
     <string name="slide1body">Let\'s begin. What is your name?</string>
     <string name="plainTxt">Type here</string>
+    <string name="changeName">Rename me, please</string>
     <string name="btnNext1">Next</string>
     <string name="btnNext2">Sure</string>
     <string name="ending">Congratulations! \n %1$s, lets do it again!</string>
