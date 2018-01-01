@@ -85,7 +85,11 @@ public class MainActivity extends AppCompatActivity {
     private static final long DURATION_GROW = 400;
     private static final long DURATION_SHRINK = 100;
     private static final long DURATION_FADE = 1000;
-    private static boolean isAnimate = false;
+    private static boolean isAnimateCup = false;
+    private static boolean isAnimateSun = false;
+    private static boolean isAnimateIcon = false;
+    private static boolean isAnimateTxt = false;
+    private static boolean isAnimateClick = false;
     CheckBox cBox;
 
     @Override
@@ -95,12 +99,12 @@ public class MainActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // lock portrait
 
-        slide1 = (View) findViewById(R.id.slide1Context);
-        slide2 = (View) findViewById(R.id.slide2Context);
-        bodyRadio = (View) findViewById(R.id.bodyRadio);
-        bodyType = (View) findViewById(R.id.bodyType);
-        aniView = (View) findViewById(R.id.aniSet);
-        resetView = (View) findViewById(R.id.resetOverlay);
+        slide1 = findViewById(R.id.slide1Context);
+        slide2 = findViewById(R.id.slide2Context);
+        bodyRadio = findViewById(R.id.bodyRadio);
+        bodyType = findViewById(R.id.bodyType);
+        aniView = findViewById(R.id.aniSet);
+        resetView = findViewById(R.id.resetOverlay);
         //  slide2 = (LinearLayout) findViewById(R.id.slide2Body);
 
         qListRadio = new ArrayList<Integer>();
@@ -108,34 +112,34 @@ public class MainActivity extends AppCompatActivity {
         qId = 1;
         prog = 0;
         q = getResources().getString(R.string.q);
-        inputName = (EditText) findViewById(R.id.inputName);
-        answerType = (EditText) findViewById(R.id.answerType);
+        inputName = findViewById(R.id.inputName);
+        answerType = findViewById(R.id.answerType);
 
         //load slide2order
   /*      txtTitle = (TextView) findViewById(R.id.textTitle2);
         fillerTop = (View) findViewById(R.id.fillerTop);*/ // delete; added viewgroup
-        txtRadio = (TextView) findViewById(R.id.textRadio);
-        txtType = (TextView) findViewById(R.id.textType);
-        txtHeader = (TextView) findViewById(R.id.textHeader2);
-        txtReset = (TextView) findViewById(R.id.resetTxt);
-        rGroup = (RadioGroup) findViewById(R.id.rGroup);
-        rBtn1 = (RadioButton) findViewById(R.id.rBtn1);
-        rBtn2 = (RadioButton) findViewById(R.id.rBtn2);
-        rBtn3 = (RadioButton) findViewById(R.id.rBtn3);
-        rBtn4 = (RadioButton) findViewById(R.id.rBtn4);
+        txtRadio = findViewById(R.id.textRadio);
+        txtType = findViewById(R.id.textType);
+        txtHeader = findViewById(R.id.textHeader2);
+        txtReset = findViewById(R.id.resetTxt);
+        rGroup = findViewById(R.id.rGroup);
+        rBtn1 = findViewById(R.id.rBtn1);
+        rBtn2 = findViewById(R.id.rBtn2);
+        rBtn3 = findViewById(R.id.rBtn3);
+        rBtn4 = findViewById(R.id.rBtn4);
         buttons[0] = rBtn1;
         buttons[1] = rBtn2;
         buttons[2] = rBtn3;
         buttons[3] = rBtn4;
 /*        fillerBot = (View) findViewById(R.id.fillerBot);
         btnNext = (Button) findViewById(R.id.btnNext);*/
-        pBar = (ProgressBar) findViewById(R.id.progressBar);
+        pBar = findViewById(R.id.progressBar);
 
-        aniBack = (ImageView) findViewById(R.id.aniBack);
-        aniContent = (ImageView) findViewById(R.id.aniContent);
-        aniCheker = (ImageView) findViewById(R.id.aniChecker);
-        aniTxt = (TextView) findViewById(R.id.aniTxt);
-        cBox = (CheckBox) findViewById(R.id.checkBox);
+        aniBack = findViewById(R.id.aniBack);
+        aniContent = findViewById(R.id.aniContent);
+        aniCheker = findViewById(R.id.aniChecker);
+        aniTxt = findViewById(R.id.aniTxt);
+        cBox = findViewById(R.id.checkBox);
 
         //  animation test block
 /*
@@ -144,13 +148,12 @@ public class MainActivity extends AppCompatActivity {
         winCup(aniContent, 0, picCup);
         winSun(aniBack, 0, picSun);*/
 
-
         //int id_cup = R.drawable.q_cup;
         //int id_sun = R.drawable.q_sun;
         // aniBack.setImageResource(id);
         //     winSunMassive(aniBack, id_sun);
         //     winAniCup(aniContent, id_cup);
-        //      winAniSun(aniBack, id_sun);
+        //     winAniSun(aniBack, id_sun);
 
         // start operations
 
@@ -158,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         radioShuffle();
         Log.i("tst", "type array" + qListType);
         Log.i("tst", "radio array" + qListRadio);
+
  /*       ViewGroup parent = (ViewGroup) findViewById(R.id.container);
         // result: layout_height=wrap_content layout_width=match_parent
         View view = LayoutInflater.from(this).inflate(R.layout.red, null);
@@ -167,10 +171,17 @@ public class MainActivity extends AppCompatActivity {
     public void start(View view) {
         if (inputName.getText().toString().isEmpty()) {
             //do nothing (yet)
-            Drawable picCup = getDrawable(R.drawable.q_cup);
+         /*   Drawable picCup = getDrawable(R.drawable.q_cup);
             Drawable picSun = getDrawable(R.drawable.q_sun);
             winCup(aniContent, 0, picCup);
             winSun(aniBack, 0, picSun);
+            */
+
+            String pass = getString(R.string.success);
+            Drawable picCheck = getDrawable(R.drawable.q_check);
+            checkMoveTxt(aniTxt, 0, pass);
+            checkMoveImg(aniCheker, 0, picCheck);
+
         } else {
             slide1.setVisibility(View.GONE);
             slide2.setVisibility(View.VISIBLE);
@@ -274,18 +285,18 @@ public class MainActivity extends AppCompatActivity {
                         String resetFinal = String.format(res, nameValue);
                         txtReset.setText(resetFinal);
                     } else {
-                        Drawable picCheck = getDrawable(R.drawable.q_check);
                         String pass = getString(R.string.success);
-                        checkMoveImg(aniCheker, 0, picCheck);
+                        Drawable picCheck = getDrawable(R.drawable.q_check);
                         checkMoveTxt(aniTxt, 0, pass);
+                        checkMoveImg(aniCheker, 0, picCheck);
                     }
                     progUpdate();
                     //   t.cancel();
                 } else {
-                    Drawable picCross = getDrawable(R.drawable.q_cross);
                     String err = getString(R.string.error2);
-                    checkMoveImg(aniCheker, 0, picCross);
+                    Drawable picCross = getDrawable(R.drawable.q_cross);
                     checkMoveTxt(aniTxt, 0, err);
+                    checkMoveImg(aniCheker, 0, picCross);
                     rGroup.clearCheck();
                     rGroup.jumpDrawablesToCurrentState(); //skip animation. safe
                 }
@@ -297,10 +308,10 @@ public class MainActivity extends AppCompatActivity {
         if (bodyType.getVisibility() == View.VISIBLE) {
             String aType = answerType.getText().toString();
             if (aTypeId.equals(aType)) {
-                Drawable picCheck = getDrawable(R.drawable.q_check);
                 String pass = getString(R.string.success);
-                checkMoveImg(aniCheker, 0, picCheck);
+                Drawable picCheck = getDrawable(R.drawable.q_check);
                 checkMoveTxt(aniTxt, 0, pass);
+                checkMoveImg(aniCheker, 0, picCheck);
                 answerType.setText("");
 
                 if (qId < 9) {
@@ -311,10 +322,10 @@ public class MainActivity extends AppCompatActivity {
                 String err = getString(R.string.error3);
                 checkMoveTxt(aniTxt, 0, err);
             } else {
-                Drawable picCross = getDrawable(R.drawable.q_cross);
                 String err = getString(R.string.error2);
-                checkMoveImg(aniCheker, 0, picCross);
+                Drawable picCross = getDrawable(R.drawable.q_cross);
                 checkMoveTxt(aniTxt, 0, err);
+                checkMoveImg(aniCheker, 0, picCross);
             }
         }
     }
@@ -371,7 +382,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i("tst", "type array" + qListType);
         Log.i("tst", "radio array" + qListRadio);
 
-        if (cBox.isChecked()){
+        if (cBox.isChecked()) {
             slide1.setVisibility(View.VISIBLE);
             slide2.setVisibility(View.GONE);
             inputName.setText("");
@@ -423,9 +434,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private static void winCup(View view, long current, Drawable img) {
-        isAnimate = true;
         final ImageView v = (ImageView) view;
         v.setImageDrawable(img);
+
+        final ObjectAnimator stepFake = winRotateObj(v, DURATION_GROW + DURATION_SHRINK + DURATION_FADE, current, 0f, 0f);
 
         final ObjectAnimator step1 = winAlphaObj(v, DURATION_GROW, current, 0f, 1f);
         final ObjectAnimator step2 = winScaleXObj(v, DURATION_GROW, current, 0.2f, 1.4f);
@@ -435,6 +447,18 @@ public class MainActivity extends AppCompatActivity {
         final ObjectAnimator step5 = winScaleYObj(v, DURATION_SHRINK, current, 1.4f, 1.2f);
 
         final ObjectAnimator step6 = winAlphaObj(v, DURATION_FADE, current, 1f, 0f);
+
+
+        stepFake.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                isAnimateCup = true;
+                step1.start();
+                step2.start();
+                step3.start();
+            }
+        });
 
         step1.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -458,23 +482,38 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
+                isAnimateCup = false;
                 v.setImageDrawable(null);
-                isAnimate = false;
             }
         });
 
-        if (isAnimate) {
-            step1.start();
-            step2.start();
-            step3.start();
-            step4.start();
+        stepFake.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                if (!isAnimateCup) {
+                    step1.cancel();
+                    step2.cancel();
+                    step3.cancel();
+                    step4.cancel();
+                    step5.cancel();
+                    step6.end();
+                }
+            }
+        });
+
+        if (!isAnimateCup) {
+            stepFake.start();
+        } else {
+            isAnimateCup = false;
         }
+
     }
 
     private static void winSun(View view, long current, Drawable img) {
-        isAnimate = true;
         final ImageView v = (ImageView) view;
         v.setImageDrawable(img);
+
+        final ObjectAnimator stepFake = winRotateObj(v, DURATION_GROW + DURATION_GROW + DURATION_FADE, current, 0f, 0f);
 
         final ObjectAnimator step1 = winRotateObj(v, DURATION_GROW + DURATION_GROW + DURATION_FADE, current, 0f, 60f);
 
@@ -487,6 +526,17 @@ public class MainActivity extends AppCompatActivity {
 
         final ObjectAnimator step7 = winAlphaObj(v, DURATION_FADE, current, 1f, 0f);
 
+        stepFake.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                isAnimateSun = true;
+                step1.start();
+                step2.start();
+                step3.start();
+                step4.start();
+            }
+        });
 
         step2.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -510,22 +560,37 @@ public class MainActivity extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
                 v.setImageDrawable(null);
-                isAnimate = false;
+                isAnimateSun = false;
             }
         });
 
-        if (isAnimate) {
-            step1.start();
-            step2.start();
-            step3.start();
-            step4.start();
+        stepFake.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                if (!isAnimateSun) {
+                    step1.cancel();
+                    step2.cancel();
+                    step3.cancel();
+                    step4.cancel();
+                    step5.cancel();
+                    step6.cancel();
+                    step7.end();
+                }
+            }
+        });
+
+        if (!isAnimateSun) {
+            stepFake.start();
+        } else {
+            isAnimateSun = false;
         }
     }
 
     private static void checkMoveImg(View view, long current, Drawable img) {
-        isAnimate = true;
         final ImageView v = (ImageView) view;
         v.setImageDrawable(img);
+
+        final ObjectAnimator stepFake = winRotateObj(v, DURATION_GROW + DURATION_FADE + DURATION_GROW, current, 0f, 0f);
 
         final ObjectAnimator step1 = checkTranslateX(v, DURATION_GROW, current, -1000f, -30f);
         final ObjectAnimator step2 = winAlphaObj(v, DURATION_GROW, current, 0.1f, 1f);
@@ -534,6 +599,15 @@ public class MainActivity extends AppCompatActivity {
 
         final ObjectAnimator step4 = checkTranslateX(v, DURATION_GROW, current, 30f, 1000f);
         final ObjectAnimator step5 = winAlphaObj(v, DURATION_GROW - 100, current, 1f, 0f);
+
+        stepFake.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                step1.start();
+                step2.start();
+            }
+        });
 
         step1.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -557,21 +631,36 @@ public class MainActivity extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
                 v.setImageDrawable(null);
-                isAnimate = false;
             }
         });
 
-        if (isAnimate) {
-            step1.start();
-            step2.start();
-        }
+        stepFake.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                //animation cancellation
+                if (!isAnimateClick) {
+                    step1.cancel();
+                    step2.cancel();
+                    step3.cancel();
+                    step4.cancel();
+                    step5.end();
+                }
+            }
+        });
 
+        if (isAnimateClick) {
+            stepFake.start();
+        } else {
+            isAnimateClick = false;
+            stepFake.start();
+        }
     }
 
     private static void checkMoveTxt(View view, long current, String str) {
-        isAnimate = true;
         final TextView v = (TextView) view;
         v.setText(str);
+
+        final ObjectAnimator stepFake = winRotateObj(v, DURATION_GROW + DURATION_FADE + DURATION_GROW, current, 0f, 0f);
 
         final ObjectAnimator step1 = checkTranslateX(view, DURATION_GROW, current, -1000f, -30f);
         final ObjectAnimator step2 = winAlphaObj(view, DURATION_GROW, current, 0.1f, 1f);
@@ -581,6 +670,15 @@ public class MainActivity extends AppCompatActivity {
         final ObjectAnimator step4 = checkTranslateX(view, DURATION_GROW, current, 30f, 1000f);
         final ObjectAnimator step5 = winAlphaObj(view, DURATION_GROW - 100, current, 1f, 0f);
 
+        stepFake.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                isAnimateClick = true;
+                step1.start();
+                step2.start();
+            }
+        });
 
         step1.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -603,14 +701,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
+                isAnimateClick = false;
                 v.setText(null);
-                isAnimate = false;
             }
         });
 
-        if (isAnimate) {
-            step1.start();
-            step2.start();
+        stepFake.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                if (!isAnimateClick) {
+                    //animation cancellation
+                    step1.cancel();
+                    step2.cancel();
+                    step3.cancel();
+                    step4.cancel();
+                    step5.end();
+                }
+            }
+        });
+
+        if (!isAnimateClick) {
+            stepFake.start();
+        } else {
+            isAnimateClick = false;     // prevent 2nd start and run animation cancellator
+            stepFake.start();           // 2nd start
         }
     }
 
